@@ -10,7 +10,7 @@ OBJ
 ## Features
   
 - remove classes that have been completed and move them into a completed list
-- display amount of classes needed to graduate and how many credits they are going to be
-- can insert grades for each class to calculate gpa
+- display classes that are needed to graduate along with pre reqs and  how many credits they are going to be
+- can insert grades for each completed class to calculate gpa
 - check which requirements are needed to be completed and which classes are available for that requirement
   - it will check for general ed requirement and major requirement
