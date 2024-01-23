@@ -23,6 +23,28 @@ class CourseManage:
             'E': {'E1': []},
             'F': {'F1': []}
         }
+        self.completed = { #will hold completed courses that can be used to calc gpa or units
+            'A': {'A1': [], 
+                  'A2': [],
+                  'A3': []}, 
+            'B': {'B1': [],
+                  'B2': [],
+                  'B3': [],
+                  'B4': [],
+                  'UD-B': []},
+            'C': {'C1': [],
+                  'C2': [],
+                  'UD-C': []},
+            'D': {'D1': [],
+                  'D2': [],
+                  'UD-D': []},
+            'E': {'E1': []},
+            'F': {'F1': []}
+        }
+
+    def web_scrape(self):
+        pass
+
 
     def parse_csv(self): #add all data to self.gened
         with open('courses.csv', 'r') as courses_file:
@@ -33,9 +55,12 @@ class CourseManage:
                     self.gened[line[0]][line[1]].append([line[2], line[3], line[4], line[5], line[6]])  
                 else:
                     print('Keys do not exist, try again')
-                     
+
         return self.gened
 
+    def completed(self): #will allow user to remove courses they have completed into a completed list
+        #will display classes that are left to take once they complete a section
+        pass
 
 
 

@@ -14,3 +14,4 @@ OBJ
 - can insert grades for each completed class to calculate gpa
 - check which requirements are needed to be completed and which classes are available for that requirement
   - it will check for general ed requirement and major requirement
+- will add the ability to make profile of student at some point
