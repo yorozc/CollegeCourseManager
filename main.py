@@ -2,7 +2,8 @@ from course_manage import *
 
 def main():
     manage = CourseManage()
-    manage.parse_csv()
+    data = manage.parse_csv()
+    print(data)
 
 if __name__ == "__main__":
     main()
