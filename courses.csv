@@ -1,0 +1,14 @@
+main_area, sub_area, name_of_subarea, course_section_number, course_name,prereqs, units
+A,A1,Oral Communication,COMM2000,Public Speaking,None,3
+A,A1,Oral Communication,COMM2005,Honors Communication Seminar,None,3
+A,A1,Oral Communication,COMM2110,Group Discussion Processes,None,3
+A,A2,Written Communication,ENGL1001,First-Year Composition,None,3
+A,A2,Written Communication,ENGL1003,First-Year Composition(FYE),None,4
+A,A2,Written Communication,ENGL1004,Reading and Writing for Multicultural Writers,None,3
+A,A2,Written Communication,ENGL1005,Honors Composition,None,3
+A,A2,Written Communication,ENGL1007,First-Year Composition(Stretch B),None,4
+A,A3,Critical Thinking,COMM2300,Argumentation and Critical Thinking, Completion of A1 and A2, 3
+A,A3,Critical Thinking,ENGL2000,Critical Inquiry,Completion of Area A2, 3
+A,A3,Critical Thinking,PHIL2000,Introduction to Critical Thinking,Completion of A1 and A2,3
+B,B1,Physical Sciences,AGST2014,Introduction to Soils,None,4
+B,B2,Biological/Life Sciences,BIOL 1010,Principles of Biology,None,3

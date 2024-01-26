@@ -23,7 +23,7 @@ class CourseManage:
             'E': {'E1': []},
             'F': {'F1': []}
         }
-        self.completed = { #will hold completed courses that can be used to calc gpa or units
+        self.completed_courses = { #will hold completed courses that can be used to calc gpa or units
             'A': {'A1': [], 
                   'A2': [],
                   'A3': []}, 
@@ -42,6 +42,9 @@ class CourseManage:
             'F': {'F1': []}
         }
 
+    def print_dict(self):
+        return self.gened
+
     def web_scrape(self):
         pass
 
@@ -58,9 +61,20 @@ class CourseManage:
 
         return self.gened
 
-    def completed(self): #will allow user to remove courses they have completed into a completed list
-        #will display classes that are left to take once they complete a section
-        pass
+    def removed(self): 
+        #ask user what classes they have taken 
+        #have it take the class_section_number or course_name
+        taken = input('What section/class have you completed: ') #have it search through the dict and rem from self.gened but move to self.completed
+        for key in self.gened:
+            if self.gened[key]:
+                remov = self.gened[key].pop(taken, None)
+            else: 
+                print('That class was not found, you maybe mispelled it?')
+                break
 
+        return remov
+    
+    def completed(self):
+        pass
 
 
