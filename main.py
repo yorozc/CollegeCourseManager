@@ -6,7 +6,8 @@ def main():
     #print(data)
     print(manage.print_dict())
     print('++++++++++++++++++++++++++++++++++++')
-    manage.removed()
-    print(manage.print_dict())
+    print(manage.removed())
+    print('+++++++++++++++++++++++++++++++++++')
+    print(manage.completed_courses)
 if __name__ == "__main__":
     main()

@@ -67,14 +67,14 @@ class CourseManage:
         taken = input('What section/class have you completed: ') #have it search through the dict and rem from self.gened but move to self.completed
         for key in self.gened:
             if self.gened[key]:
-                remov = self.gened[key].pop(taken, None)
+                return self.gened[key].pop(taken, None)
+                
             else: 
                 print('That class was not found, you maybe mispelled it?')
                 break
 
-        return remov
-    
-    def completed(self):
-        pass
+    def completed(self): #move to completed dictionary
+        rmv = self.removed()
+        return rmv
 
 
