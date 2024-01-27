@@ -52,7 +52,7 @@ class CourseManage:
     def parse_csv(self): #add all data to self.gened
         with open('courses.csv', 'r') as courses_file:
             csv_reader = csv.reader(courses_file, delimiter=',')
-            headers = next(csv_reader)
+            next(csv_reader)
             for line in csv_reader:
                 if line[0] in self.gened.keys() and line[1] in self.gened[line[0]].keys():
                     self.gened[line[0]][line[1]].append([line[2], line[3], line[4], line[5], line[6]])  
@@ -68,12 +68,13 @@ class CourseManage:
         taken = input('What section/class have you completed: ') #have it search through the dict and rem from self.gened but move to self.completed
         for key in self.gened:
             if self.gened[key]:
-                rmv = self.gened[key].pop(taken, None)
-                self.completed_courses[key][taken] = rmv
-
+                self.completed_courses[key][taken]  = self.gened[key].pop(taken, None) 
                 return self.completed_courses
             
             else: 
                 print('That class was not found, you maybe mispelled it?')
                 break
         
+    def check_eligibility(self): 
+        #checks if eligible for class by checking prereqs from completed courses
+        pass
