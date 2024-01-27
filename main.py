@@ -8,6 +8,6 @@ def main():
     print('++++++++++++++++++++++++++++++++++++')
     print(manage.removed())
     print('+++++++++++++++++++++++++++++++++++')
-    print(manage.completed_courses)
+    #print(manage.completed_courses)
 if __name__ == "__main__":
     main()

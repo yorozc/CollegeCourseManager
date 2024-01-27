@@ -42,7 +42,7 @@ class CourseManage:
             'F': {'F1': []}
         }
 
-    def print_dict(self):
+    def print_dict(self): #make it print elegantly not ugly
         return self.gened
 
     def web_scrape(self):
@@ -61,20 +61,19 @@ class CourseManage:
 
         return self.gened
 
-    def removed(self): 
+    def removed(self): #once removed, it will go to completed_courses
         #ask user what classes they have taken 
         #have it take the class_section_number or course_name
+        #1/27/2024 Note to self: give capability of erasing with section # or name of class
         taken = input('What section/class have you completed: ') #have it search through the dict and rem from self.gened but move to self.completed
         for key in self.gened:
             if self.gened[key]:
-                return self.gened[key].pop(taken, None)
-                
+                rmv = self.gened[key].pop(taken, None)
+                self.completed_courses[key][taken] = rmv
+
+                return self.completed_courses
+            
             else: 
                 print('That class was not found, you maybe mispelled it?')
                 break
-
-    def completed(self): #move to completed dictionary
-        rmv = self.removed()
-        return rmv
-
-
+        
