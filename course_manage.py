@@ -41,6 +41,7 @@ class CourseManage:
             'F': {'F1': []}
         }
         self.prereqs = []
+
     def print_dict(self): #make it not ugly
         return self.gened
 
@@ -74,7 +75,7 @@ class CourseManage:
                 break
         
 
-    def add_prereqs(self): # will return a list of prereqs gathered from completed list
+    def add_prereqs(self): # will return a list of prereqs gathered from completed courses
         for main, sub in self.completed_courses.items():
             for key in sub:
                 for i in range(len(sub[key])):
@@ -83,7 +84,6 @@ class CourseManage:
 
     def check_eligibility(self): 
         #checks if eligible for class by checking prereqs from completed courses
-        #elig = input("What subsection do you want to check: ")
         course_name = input("What class do you want to check: ")
         for main, sub in self.gened.items():
             for key in sub:
@@ -98,9 +98,6 @@ class CourseManage:
                         break
                     else:
                         pass
-        
-
-        #grabbed eligibility from dict now check if it in completed
         
 
 
