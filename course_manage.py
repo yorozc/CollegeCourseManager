@@ -64,7 +64,6 @@ class CourseManage:
     def removed(self): #once removed, it will go to completed_courses
         #ask user what classes they have taken 
         #have it take the class_section_number or course_name
-        #1/27/2024 Note to self: give capability of erasing with section # or name of class
         taken = input('What section/class have you completed: ') #have it search through the dict and rem from self.gened but move to self.completed
         for key in self.gened:
             if self.gened[key]:
@@ -84,7 +83,7 @@ class CourseManage:
 
     def check_eligibility(self): 
         #checks if eligible for class by checking prereqs from completed courses
-        course_name = input("What class do you want to check: ")
+        course_name = input("Insert name of class: ")
         for main, sub in self.gened.items():
             for key in sub:
                 for i in range(len(sub[key])):
@@ -96,9 +95,11 @@ class CourseManage:
                         else:
                             print("Ineligible, You need these prereqs to take this class: " + elig)
                         break
-                    else:
-                        pass
         
+    def classes_needed_to_grad(self):
+        #will display classes that are not in completed list in a way that is easier to read
+        pass
+
 
 
 
