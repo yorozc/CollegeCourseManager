@@ -1,6 +1,5 @@
 #parse through csv and sort information into dict 
 import csv
-
 class CourseManage: 
 
     def __init__(self):
@@ -41,8 +40,8 @@ class CourseManage:
             'E': {'E1': []},
             'F': {'F1': []}
         }
-
-    def print_dict(self): #make it print elegantly not ugly
+        self.prereqs = []
+    def print_dict(self): #make it not ugly
         return self.gened
 
     def web_scrape(self):
@@ -70,11 +69,41 @@ class CourseManage:
             if self.gened[key]:
                 self.completed_courses[key][taken]  = self.gened[key].pop(taken, None) 
                 return self.completed_courses
-            
             else: 
                 print('That class was not found, you maybe mispelled it?')
                 break
         
+
+    def add_prereqs(self): # will return a list of prereqs gathered from completed list
+        for main, sub in self.completed_courses.items():
+            for key in sub:
+                for i in range(len(sub[key])):
+                    self.prereqs.append(sub[key][i][3])
+        return self.prereqs
+
     def check_eligibility(self): 
         #checks if eligible for class by checking prereqs from completed courses
-        pass
+        #elig = input("What subsection do you want to check: ")
+        course_name = input("What class do you want to check: ")
+        for main, sub in self.gened.items():
+            for key in sub:
+                for i in range(len(sub[key])):
+                    if bool(sub[key]) and course_name in sub[key][i]:
+                        #print(" Elig: ",sub[key][i][3])
+                        elig = sub[key][i][3]
+                        if elig in self.add_prereqs() or elig == "None":
+                            print("Eligible")
+                        else:
+                            print("Ineligible, You need these prereqs to take this class: " + elig)
+                        break
+                    else:
+                        pass
+        
+
+        #grabbed eligibility from dict now check if it in completed
+        
+
+
+
+        
+

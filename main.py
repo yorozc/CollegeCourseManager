@@ -8,6 +8,10 @@ def main():
     print('++++++++++++++++++++++++++++++++++++')
     print(manage.removed())
     print('+++++++++++++++++++++++++++++++++++')
+    print(manage.gened)
+    print('+++++++++++++++++++++++++++++++++++')
+    manage.check_eligibility()
+
     #print(manage.completed_courses)
 if __name__ == "__main__":
     main()
